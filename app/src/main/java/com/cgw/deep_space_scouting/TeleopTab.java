@@ -16,24 +16,13 @@ import android.widget.TextView;
 public class TeleopTab extends Fragment {
     public static final String TAG = "Teleop Tab";
 
-    public static final String[] hab_level_array = {"HAB Level", "the robot did not climb", "1", "2", "3"};
-    public static final String[] hab_speed_array = {"HAB Speed (1-3)", "1", "2", "3"};
+    public static final String[] hab_level_array = {"please select", "the robot did not climb", "1", "2", "3"};
+    public static final String[] hab_speed_array = {"please select", "the robot did not climb", "1", "2", "3"};
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.teleop_tab, container, false);
-
-        Spinner hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
-        Spinner hab_speed_spinner = view.findViewById(R.id.hab_speed_spinner);
-
-        ArrayAdapter<CharSequence> hab_level_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, hab_level_array);
-        hab_level_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        hab_level_spinner.setAdapter(hab_level_spinner_adapter);
-
-        ArrayAdapter hab_speed_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, hab_speed_array);
-        hab_speed_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        hab_speed_spinner.setAdapter(hab_speed_spinner_adapter);
 
         setSpinnerValues(view);
         sets(view);
@@ -71,8 +60,17 @@ public class TeleopTab extends Fragment {
     }
 
     public void sets(View view){
-        TextView debug_window = view.findViewById(R.id.debug_window);
-        debug_window.setText(MainActivity.cargoship_hatch_count);
+
+        Spinner hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
+        Spinner hab_speed_spinner = view.findViewById(R.id.hab_speed_spinner);
+
+        ArrayAdapter<CharSequence> hab_level_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, hab_level_array);
+        hab_level_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        hab_level_spinner.setAdapter(hab_level_spinner_adapter);
+
+        ArrayAdapter hab_speed_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, hab_speed_array);
+        hab_speed_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        hab_speed_spinner.setAdapter(hab_speed_spinner_adapter);
 
         TextView cargoship_hatch_count_box = view.findViewById(R.id.cargoship_hatch_count_box);
         cargoship_hatch_count_box.setText(MainActivity.cargoship_hatch_count);

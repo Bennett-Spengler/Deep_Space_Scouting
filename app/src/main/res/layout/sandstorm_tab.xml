@@ -265,16 +265,4 @@
         app:layout_constraintBottom_toTopOf="@+id/ss_hatch_minus_btn"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/debug_window"
-        android:layout_width="206dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginLeft="292dp"
-        android:layout_marginBottom="168dp"
-        android:text="TextView"
-        android:background="@color/colorFieldYellow"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
 </android.support.constraint.ConstraintLayout>

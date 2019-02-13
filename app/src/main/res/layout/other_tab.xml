@@ -78,14 +78,15 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
+        android:layout_width="364dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="112dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Rate the robot's overall speed on the field"
+        android:gravity="center_horizontal"
+        android:text="Rate the robot's overall speed on the field (1 is slow, 3 is fast)"
         android:textColor="@color/colorRed"
         android:textSize="18sp"
         app:fontFamily="serif"
@@ -228,6 +229,18 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/debug_window"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginLeft="116dp"
+        android:layout_marginBottom="70dp"
+        android:background="@color/colorFieldYellow"
+        android:text="Debug Window"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -24,16 +24,13 @@ public class SandstormTab extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sandstorm_tab, container, false);
 
-        Spinner sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
 
-        ArrayAdapter<CharSequence> sandstorm_hab_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, ss_hab_array);
-        sandstorm_hab_spinner_adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
-        sandstorm_hab_spinner.setAdapter(sandstorm_hab_spinner_adapter);
 
+        sets(view);
         getSpinnerValues(view);
         enterData(view);
 
-        sets(view);
+
 
         return view;
     }
@@ -107,19 +104,28 @@ public class SandstormTab extends Fragment {
     }
 
     public void sets(View view){
-        TextView debug_window = view.findViewById(R.id.debug_window);
-        debug_window.setText(MainActivity.sandstorm_hatch_count);
+
+        Spinner sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
+
+        ArrayAdapter<CharSequence> sandstorm_hab_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, ss_hab_array);
+        sandstorm_hab_spinner_adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        sandstorm_hab_spinner.setAdapter(sandstorm_hab_spinner_adapter);
+
+        EditText scout_name_box = view.findViewById(R.id.scout_name_box);
+        scout_name_box.setText(MainActivity.scout_name);
+
+        TextView match_number_box = view.findViewById(R.id.match_number_box);
+        match_number_box.setText(MainActivity.scout_name);
 
         TextView ss_hatch_count_box = view.findViewById(R.id.ss_hatch_count_box);
         ss_hatch_count_box.setText(MainActivity.sandstorm_hatch_count);
         TextView ss_cargo_count_box = view.findViewById(R.id.ss_cargo_count_box);
         ss_cargo_count_box.setText(MainActivity.sandstorm_cargo_count);
 
-        EditText scout_name_box = view.findViewById(R.id.scout_name_box);
-        scout_name_box.setText(MainActivity.scout_name);
     }
 
     public static void reset(){
+        MainActivity.team_number = null;
         MainActivity.sandstorm_hatch_count = "0";
         MainActivity.sandstorm_hatch_counter = 0;
         MainActivity.sandstorm_cargo_count = "0";

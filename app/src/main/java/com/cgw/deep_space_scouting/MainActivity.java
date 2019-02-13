@@ -24,12 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = "Main Activity";
 
-    public static boolean reset = false;
-
     //PREEXISTING VARIABLES
     public static String scout_name = "";
-    public static String match_number = "0";
-    public static String team_number = "0";
+    public static String match_number = "";
+    public static String team_number = "";
 
     //SANDSTORM VARIABLES
     public static String sandstorm_hab = "0";
@@ -63,21 +61,19 @@ public class MainActivity extends AppCompatActivity {
 
     //OTHER VARIABLES
     public static String overall_speed = "0";
-    public static String general_strategy = "0";
+    public static String general_strategy = "";
     public static String penalites = "";
-    public static String final_score;
-    public static String breakdown; //this will be a "0" for no breakdown and a "1" for a breakdown
-    public static String comments;
+    public static String final_score = "";
+    public static String breakdown = ""; //this will be a "0" for no breakdown and a "1" for a breakdown
+    public static String comments = "";
 
     //ARRAY OF ALL VARIABLES LISTED ABOVE
     public static String[] all_data_array = new String[22];
     /*data stored in the following format:
-
-    (match_number, team_number, sandstorm_hab, sandstorm_hatch_count, sandstorm_cargo_count,
-    cargoship_hatch_count, cargoship_cargo_count, high_rocket_hatch_count, high_rocket_cargo_count, mid_rocket_hatch_count, mid_rocket_cargo_count,
-    low_rocket_hatch_count, low_rocket_cargo_count, hab_climb_level, hab_climb_speed, overall_speed, general_strategy, penalties, final_score
-    breakdown, comments)
-
+        (match_number, team_number, sandstorm_hab, sandstorm_hatch_count, sandstorm_cargo_count,
+        cargoship_hatch_count, cargoship_cargo_count, high_rocket_hatch_count, high_rocket_cargo_count, mid_rocket_hatch_count, mid_rocket_cargo_count,
+        low_rocket_hatch_count, low_rocket_cargo_count, hab_climb_level, hab_climb_speed, overall_speed, general_strategy, penalties, final_score
+        breakdown, comments)
     */
 
 
@@ -268,8 +264,6 @@ public class MainActivity extends AppCompatActivity {
         low_rocket_cargo_count = String.valueOf(low_rocket_cargo_counter);
         low_rocket_cargo_count_box.setText(low_rocket_cargo_count);
     }
-
-    //OTHER METHODS
 
     public static void enterData(){
         all_data_array[0] = match_number;
