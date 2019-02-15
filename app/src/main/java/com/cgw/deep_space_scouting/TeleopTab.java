@@ -59,6 +59,8 @@ public class TeleopTab extends Fragment {
         });
     }
 
+    //THIS CLASS HAS NO ENTERDATA METHOD (NO TEXT BOXES)
+
     public void sets(View view){
 
         Spinner hab_level_spinner = view.findViewById(R.id.hab_level_spinner);

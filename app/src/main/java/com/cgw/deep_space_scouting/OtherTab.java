@@ -45,8 +45,8 @@ public class OtherTab extends Fragment {
 
         sets(view);
         setSpinnerValues(view);
-        enterData(view);
         submitBtn(view);
+        deleteFile(view);
 
         return view;
         }
@@ -99,13 +99,17 @@ public class OtherTab extends Fragment {
             @Override
             public void onClick(View v) {
 
+                enterData(view); // this method call must me inside a button click since it cannot be run with onCreate;
+                                // it also must run before MainActivity.setDataArray() for obvious reasons
+                MainActivity.setDataArray();
+
+
                 android.support.v7.app.AlertDialog.Builder altDial = new android.support.v7.app.AlertDialog.Builder(getActivity());
                 altDial.setMessage("Are you sure you want to submit this match's data?").setCancelable(false);
                 altDial.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        MainActivity.enterData();
                         try {
                             writeData(view);
                         } catch (FileNotFoundException e) {
@@ -135,6 +139,7 @@ public class OtherTab extends Fragment {
 
         final File path = getActivity().getApplicationContext().getExternalFilesDir(null);
         final File file = new File(path, "data.txt");
+
         final FileOutputStream output_stream = new FileOutputStream(file, true);
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(output_stream));
 
@@ -148,6 +153,7 @@ public class OtherTab extends Fragment {
         writer.println();
         writer.flush();
         writer.close();
+
     }
 
     public void enterData(View view){
@@ -204,5 +210,36 @@ public class OtherTab extends Fragment {
         comments_box.setText("");
         MainActivity.comments = "";
 
+    }
+
+    public void deleteFile(View view){
+
+        final File path = getActivity().getApplicationContext().getExternalFilesDir(null);
+        final File file = new File(path, "data.txt");
+
+        Button delete_file_btn = view.findViewById(R.id.delete_file_btn);
+        delete_file_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.support.v7.app.AlertDialog.Builder altDial = new android.support.v7.app.AlertDialog.Builder(getActivity());
+                altDial.setMessage("Are you sure you want to delete this file?").setCancelable(false);
+                altDial.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        file.delete();
+                        MainActivity.mViewPager.setCurrentItem(0);
+                    }
+                });
+                altDial.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                android.support.v7.app.AlertDialog alert = altDial.create();
+                alert.setTitle("DELETE FILE");
+                alert.show();
+            }
+        });
     }
 }

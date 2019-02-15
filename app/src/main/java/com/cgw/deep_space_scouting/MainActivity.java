@@ -265,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
         low_rocket_cargo_count_box.setText(low_rocket_cargo_count);
     }
 
-    public static void enterData(){
+    public static void setDataArray(){
         all_data_array[0] = match_number;
         all_data_array[1] = team_number;
         all_data_array[2] = sandstorm_hab;
@@ -289,5 +289,4 @@ public class MainActivity extends AppCompatActivity {
         all_data_array[20] = comments;
         all_data_array[21] = scout_name;
     }
-
 }

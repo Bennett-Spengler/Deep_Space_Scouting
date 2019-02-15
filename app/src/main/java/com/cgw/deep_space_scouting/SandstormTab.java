@@ -26,11 +26,11 @@ public class SandstormTab extends Fragment {
 
 
 
-        sets(view);
         getSpinnerValues(view);
+
+        sets(view);
+
         enterData(view);
-
-
 
         return view;
     }
@@ -70,15 +70,14 @@ public class SandstormTab extends Fragment {
             @Override
             public void onClick(View v) {
 
-                setTeamSpinners(view);
+                setTeamSpinners(view); //this has to be in this method since only one onClick method can exist
 
+                //these lines must be inside an onClick method since onCreateView only runs when window is created.
                 EditText scout_name_box = view.findViewById(R.id.scout_name_box);
                 EditText match_number_box = view.findViewById(R.id.match_number_box);
-//                TextView debug_window = view.findViewById(R.id.debug_window);
 
                 MainActivity.scout_name = String.valueOf(scout_name_box.getText().toString());
                 MainActivity.match_number = String.valueOf(match_number_box.getText().toString());
-//                debug_window.setText(MainActivity.scout_name);
             }
         });
     }
@@ -92,18 +91,39 @@ public class SandstormTab extends Fragment {
 
         switch (match_number){
             case "1":
-                team_number_spinner_adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[1]);
+                team_number_spinner_adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[0]);
                 team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
                 team_number_spinner.setAdapter(team_number_spinner_adapter);
                 break;
             case "2":
+                team_number_spinner_adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[1]);
+                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                team_number_spinner.setAdapter(team_number_spinner_adapter);
+                break;
+            case "3":
                 team_number_spinner_adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[2]);
                 team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
                 team_number_spinner.setAdapter(team_number_spinner_adapter);
+                break;
+            case "4":
+                team_number_spinner_adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[3]);
+                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                team_number_spinner.setAdapter(team_number_spinner_adapter);
+                break;
+            case "5":
+                team_number_spinner_adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[4]);
+                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                team_number_spinner.setAdapter(team_number_spinner_adapter);
+                break;
+            case "6":
+                team_number_spinner_adapter = new ArrayAdapter<String>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[5]);
+                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                team_number_spinner.setAdapter(team_number_spinner_adapter);
+                break;
         }
     }
 
-    public void sets(View view){
+    public void sets(final View view){
 
         Spinner sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
 
@@ -125,7 +145,7 @@ public class SandstormTab extends Fragment {
     }
 
     public static void reset(){
-        MainActivity.team_number = null;
+        MainActivity.team_number = "";
         MainActivity.sandstorm_hatch_count = "0";
         MainActivity.sandstorm_hatch_counter = 0;
         MainActivity.sandstorm_cargo_count = "0";
