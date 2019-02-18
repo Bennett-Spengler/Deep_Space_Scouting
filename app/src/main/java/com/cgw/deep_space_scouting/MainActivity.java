@@ -1,28 +1,15 @@
 package com.cgw.deep_space_scouting;
 
-import android.content.DialogInterface;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity {
-
-    public static final String TAG = "Main Activity";
 
     //PREEXISTING VARIABLES
     public static String scout_name = "";
@@ -99,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new SandstormTab(), "          Sandstorm          ");
         adapter.addFragment(new TeleopTab(), "          Teleop          ");
         adapter.addFragment(new OtherTab(), "          Other");
+        adapter.addFragment(new PitPictureTab(), "Pit Scouting");
 
         viewPager.setAdapter(adapter);
     }

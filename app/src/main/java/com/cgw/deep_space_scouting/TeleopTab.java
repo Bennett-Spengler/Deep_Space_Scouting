@@ -14,7 +14,6 @@ import android.widget.TextView;
 
 
 public class TeleopTab extends Fragment {
-    public static final String TAG = "Teleop Tab";
 
     public static final String[] hab_level_array = {"please select", "the robot did not climb", "1", "2", "3"};
     public static final String[] hab_speed_array = {"please select", "the robot did not climb", "1", "2", "3"};
@@ -24,13 +23,14 @@ public class TeleopTab extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.teleop_tab, container, false);
 
-        setSpinnerValues(view);
         sets(view);
+        getSpinnerValues(view); // this method call can't be in enterData for some reason
+        enterData();
 
         return view;
     }
 
-    public void setSpinnerValues(View view){
+    public void getSpinnerValues(View view){
         final Spinner hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
         final Spinner hab_speed_spinner = view.findViewById(R.id.hab_speed_spinner);
 
@@ -59,7 +59,8 @@ public class TeleopTab extends Fragment {
         });
     }
 
-    //THIS CLASS HAS NO ENTERDATA METHOD (NO TEXT BOXES)
+    public void enterData(){
+    }
 
     public void sets(View view){
 

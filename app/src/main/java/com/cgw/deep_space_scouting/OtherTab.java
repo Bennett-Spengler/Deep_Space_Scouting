@@ -27,16 +27,10 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 
 public class OtherTab extends Fragment {
-    public static final String TAG = "Other Tab";
 
     public static final String[] overall_speed_array = {"please select", "1", "2", "3"};
     public static final String[] general_strategy_array = {"please select", "rocket and hatches", "rocket and cargo", "cargoship and hatches", "cargoship and cargo", "defense"};
     public static final String[] penalties_array = {"please select", "yellow card", "red card", "not sure"};
-
-//    @SuppressLint("ValidFragment")
-//    public OtherTab(ViewPager viewPager){
-//        this.viewPager = viewPager;
-//    }
 
     @Nullable
     @Override
@@ -44,14 +38,14 @@ public class OtherTab extends Fragment {
         View view = inflater.inflate(R.layout.other_tab, container, false);
 
         sets(view);
-        setSpinnerValues(view);
+        getSpinnerValues(view);
         submitBtn(view);
         deleteFile(view);
 
         return view;
         }
 
-        public void setSpinnerValues(View view){
+    public void getSpinnerValues(View view){
             final Spinner overall_speed_spinner = view.findViewById(R.id.overall_speed_spinner);
             final Spinner general_strategy_spinner = view.findViewById(R.id.general_strategy_spinner);
             final Spinner penalties_spinner = view.findViewById(R.id.penalties_spinner);
@@ -111,12 +105,12 @@ public class OtherTab extends Fragment {
                     public void onClick(DialogInterface dialog, int which) {
 
                         try {
-                            writeData(view);
+                            writeData();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                         }
-                        reset(view);
                         SandstormTab.reset();
+                        reset(view);
                         TeleopTab.reset();
 
                         MainActivity.mViewPager.setCurrentItem(0);
@@ -135,7 +129,7 @@ public class OtherTab extends Fragment {
         });
     }
 
-    public void writeData(View view) throws FileNotFoundException {
+    public void writeData() throws FileNotFoundException {
 
         final File path = getActivity().getApplicationContext().getExternalFilesDir(null);
         final File file = new File(path, "data.txt");
