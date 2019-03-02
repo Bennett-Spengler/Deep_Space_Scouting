@@ -55,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
 
     //ARRAY OF ALL VARIABLES LISTED ABOVE
     public static String[] all_data_array = new String[22];
-    public static String[] all_data_array_info = {"match number", "team number", " sandstorm HAB", "", "", "",
-    "", "", "", "", "", "", "", "", "HAB climb level", "HAB climb speed", "overall speed", "general strategy", "penalties", "final score", "breakdown",
-    "comments"};
+
+//    public static String[] all_data_array_info = {"match number", "team number", " sandstorm HAB", "", "", "",
+//    "", "", "", "", "", "", "", "", "HAB climb level", "HAB climb speed", "overall speed", "general strategy", "penalties", "final score", "breakdown",
+//    "comments"};
+
     /*data stored in the following format:
         (match_number, team_number, sandstorm_hab, sandstorm_hatch_count, sandstorm_cargo_count,
         cargoship_hatch_count, cargoship_cargo_count, high_rocket_hatch_count, high_rocket_cargo_count, mid_rocket_hatch_count, mid_rocket_cargo_count,
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new CoverTab(), "Cover          ");
         adapter.addFragment(new SandstormTab(), "          Sandstorm          ");
         adapter.addFragment(new TeleopTab(), "          Teleop          ");
-        adapter.addFragment(new OtherTab(), "          Other");
+        adapter.addFragment(new SubmitTab(), "          Other");
         adapter.addFragment(new PitPictureTab(), "Pit Scouting");
 
         viewPager.setAdapter(adapter);

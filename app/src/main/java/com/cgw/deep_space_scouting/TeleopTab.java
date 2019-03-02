@@ -18,6 +18,9 @@ public class TeleopTab extends Fragment {
     public static final String[] hab_level_array = {"please select", "the robot did not climb", "1", "2", "3"};
     public static final String[] hab_speed_array = {"please select", "the robot did not climb", "1", "2", "3"};
 
+    Spinner hab_level_spinner;
+    Spinner hab_speed_spinner;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,8 +34,8 @@ public class TeleopTab extends Fragment {
     }
 
     public void getSpinnerValues(View view){
-        final Spinner hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
-        final Spinner hab_speed_spinner = view.findViewById(R.id.hab_speed_spinner);
+        hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
+        hab_speed_spinner = view.findViewById(R.id.hab_speed_spinner);
 
         hab_level_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -64,8 +67,8 @@ public class TeleopTab extends Fragment {
 
     public void sets(View view){
 
-        Spinner hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
-        Spinner hab_speed_spinner = view.findViewById(R.id.hab_speed_spinner);
+        hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
+        hab_speed_spinner = view.findViewById(R.id.hab_speed_spinner);
 
         ArrayAdapter<CharSequence> hab_level_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, hab_level_array);
         hab_level_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

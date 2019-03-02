@@ -17,24 +17,27 @@ import android.widget.TextView;
 
 public class SandstormTab extends Fragment {
 
-    public static final String [] ss_hab_array = {"HAB Level", "the robot did not move", "1", "2"};
+    public static final String [] ss_hab_array = {"please select", "the robot did not move", "1", "2"};
+
+    static Spinner team_number_spinner;
+    static Spinner sandstorm_hab_spinner;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.sandstorm_tab, container, false);
 
+
         sets(view);
         getSpinnerValues(view);
         enterData(view);
-        resetSpinner(view);
 
         return view;
     }
 
     public void getSpinnerValues(View view){
-        final Spinner team_number_spinner = view.findViewById(R.id.team_number_spinner);
-        final Spinner sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
+        team_number_spinner = view.findViewById(R.id.team_number_spinner);
+        sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
 
         team_number_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -84,7 +87,7 @@ public class SandstormTab extends Fragment {
     public void setTeamSpinners(View view){
         EditText match_number_box = view.findViewById(R.id.match_number_box);
         String match_number = String.valueOf(match_number_box.getText());
-        Spinner team_number_spinner = view.findViewById(R.id.team_number_spinner);
+        team_number_spinner = view.findViewById(R.id.team_number_spinner);
 
         ArrayAdapter team_number_spinner_adapter;
 
@@ -600,7 +603,7 @@ public class SandstormTab extends Fragment {
     public void sets(final View view){
 
         //this sets the HAB spinner
-        Spinner sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
+        sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
 
         ArrayAdapter<CharSequence> sandstorm_hab_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, ss_hab_array);
         sandstorm_hab_spinner_adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
@@ -626,10 +629,4 @@ public class SandstormTab extends Fragment {
         MainActivity.sandstorm_cargo_count = "0";
         MainActivity.sandstorm_cargo_counter = 0;
     }
-
-    public void resetSpinner(View view){
-        Spinner sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
-        sandstorm_hab_spinner.setSelection(0);
-    }
-
 }
