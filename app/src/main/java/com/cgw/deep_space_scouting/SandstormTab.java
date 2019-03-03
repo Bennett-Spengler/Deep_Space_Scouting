@@ -17,7 +17,7 @@ import android.widget.TextView;
 
 public class SandstormTab extends Fragment {
 
-    public static final String [] ss_hab_array = {"please select", "the robot did not move", "1", "2"};
+    public static final String [] ss_hab_array = {"please select", "the robot did not move", "1", "2", "not sure"};
 
     static Spinner team_number_spinner;
     static Spinner sandstorm_hab_spinner;
