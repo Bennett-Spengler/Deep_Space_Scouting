@@ -17,16 +17,16 @@ import android.widget.TextView;
 
 public class SandstormTab extends Fragment {
 
-    public static final String [] ss_hab_array = {"please select", "the robot did not move", "1", "2", "not sure"};
+    public static String [] ss_hab_array = new String[]{"please select", "the robot did not move", "1", "2", "not sure"};
 
     static Spinner team_number_spinner;
     static Spinner sandstorm_hab_spinner;
+    private static View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.sandstorm_tab, container, false);
-
+        view = inflater.inflate(R.layout.sandstorm_tab, container, false);
 
         sets(view);
         getSpinnerValues(view);
@@ -85,6 +85,7 @@ public class SandstormTab extends Fragment {
     }
 
     public void setTeamSpinners(View view){
+
         EditText match_number_box = view.findViewById(R.id.match_number_box);
         String match_number = String.valueOf(match_number_box.getText());
         team_number_spinner = view.findViewById(R.id.team_number_spinner);
@@ -623,10 +624,12 @@ public class SandstormTab extends Fragment {
     }
 
     public static void reset(){
+
         MainActivity.team_number = "";
         MainActivity.sandstorm_hatch_count = "0";
         MainActivity.sandstorm_hatch_counter = 0;
         MainActivity.sandstorm_cargo_count = "0";
         MainActivity.sandstorm_cargo_counter = 0;
     }
+
 }

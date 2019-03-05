@@ -48,22 +48,17 @@ public class MainActivity extends AppCompatActivity {
     //OTHER VARIABLES
     public static String overall_speed = "0";
     public static String general_strategy = "";
-    public static String penalties = "";
     public static String final_score = "";
     public static String breakdown = "0"; //this will be a "0" for no breakdown and a "1" for a breakdown
     public static String comments = "";
 
     //ARRAY OF ALL VARIABLES LISTED ABOVE
-    public static String[] all_data_array = new String[22];
-
-//    public static String[] all_data_array_info = {"match number", "team number", " sandstorm HAB", "", "", "",
-//    "", "", "", "", "", "", "", "", "HAB climb level", "HAB climb speed", "overall speed", "general strategy", "penalties", "final score", "breakdown",
-//    "comments"};
+    public static String[] all_data_array = new String[21];
 
     /*data stored in the following format:
         (match_number, team_number, sandstorm_hab, sandstorm_hatch_count, sandstorm_cargo_count,
         cargoship_hatch_count, cargoship_cargo_count, high_rocket_hatch_count, high_rocket_cargo_count, mid_rocket_hatch_count, mid_rocket_cargo_count,
-        low_rocket_hatch_count, low_rocket_cargo_count, hab_climb_level, hab_climb_speed, overall_speed, general_strategy, penalties, final_score
+        low_rocket_hatch_count, low_rocket_cargo_count, hab_climb_level, hab_climb_speed, overall_speed, general_strategy, final_score
         breakdown, comments)
     */
 
@@ -275,10 +270,9 @@ public class MainActivity extends AppCompatActivity {
         all_data_array[14] = hab_climb_speed;
         all_data_array[15] = overall_speed;
         all_data_array[16] = general_strategy;
-        all_data_array[17] = penalties;
-        all_data_array[18] = final_score;
-        all_data_array[19] = breakdown;
-        all_data_array[20] = comments;
-        all_data_array[21] = scout_name;
+        all_data_array[17] = final_score;
+        all_data_array[18] = breakdown;
+        all_data_array[19] = comments;
+        all_data_array[20] = scout_name;
     }
 }

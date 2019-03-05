@@ -1,11 +1,9 @@
 package com.cgw.deep_space_scouting;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +14,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -34,13 +29,12 @@ public class SubmitTab extends Fragment {
 
     Spinner overall_speed_spinner;
     Spinner general_strategy_spinner;
-    Spinner penalties_spinner;
     Spinner sandstorm_hab_spinner;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.other_tab, container, false);
+        View view = inflater.inflate(R.layout.submit_tab, container, false);
 
         sets(view);
         getSpinnerValues(view);
@@ -53,7 +47,6 @@ public class SubmitTab extends Fragment {
     public void getSpinnerValues(View view) {
         overall_speed_spinner = view.findViewById(R.id.overall_speed_spinner);
         general_strategy_spinner = view.findViewById(R.id.general_strategy_spinner);
-        penalties_spinner = view.findViewById(R.id.penalties_spinner);
 
         overall_speed_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -71,18 +64,6 @@ public class SubmitTab extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 MainActivity.general_strategy = general_strategy_spinner.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        penalties_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.penalties = penalties_spinner.getSelectedItem().toString();
             }
 
             @Override
@@ -132,7 +113,7 @@ public class SubmitTab extends Fragment {
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(output_stream));
 
         for (int i = 0; i < MainActivity.all_data_array.length; i++) {
-            if (i != 21) {
+            if (i != 20) {
                 writer.print(MainActivity.all_data_array[i] + ",");
             } else {
                 writer.print(MainActivity.all_data_array[i]);
@@ -164,7 +145,6 @@ public class SubmitTab extends Fragment {
 
         overall_speed_spinner = view.findViewById(R.id.overall_speed_spinner);
         general_strategy_spinner = view.findViewById(R.id.general_strategy_spinner);
-        penalties_spinner = view.findViewById(R.id.penalties_spinner);
 
         ArrayAdapter<CharSequence> overall_speed_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, overall_speed_array);
         overall_speed_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -173,17 +153,12 @@ public class SubmitTab extends Fragment {
         ArrayAdapter<CharSequence> general_strategy_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, general_strategy_array);
         general_strategy_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         general_strategy_spinner.setAdapter(general_strategy_spinner_adapter);
-
-        ArrayAdapter<CharSequence> penalties_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, penalties_array);
-        penalties_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        penalties_spinner.setAdapter(penalties_spinner_adapter);
     }
 
     public void reset(View view) {
 
         overall_speed_spinner.setSelection(0);
         general_strategy_spinner.setSelection(0);
-        penalties_spinner.setSelection(0);
 
         EditText final_score_box = view.findViewById(R.id.final_score_box);
         final_score_box.setText("");
@@ -238,6 +213,7 @@ public class SubmitTab extends Fragment {
 
     public void deleteFile(View view){
 
+        final EditText password_box = view.findViewById(R.id.password_box);
         final File path = getActivity().getApplicationContext().getExternalFilesDir(null);
         final File file = new File(path, "data.txt");
 
@@ -250,8 +226,13 @@ public class SubmitTab extends Fragment {
                 altDial.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        file.delete();
-                        MainActivity.mViewPager.setCurrentItem(0);
+                        if(password_box.getText().toString().equals("D3l3te321")) {
+                            file.delete();
+                            MainActivity.mViewPager.setCurrentItem(0);
+                            password_box.setText("");
+                        } else {
+                            password_box.setText("incorrect");
+                        }
                     }
                 });
                 altDial.setNegativeButton("NO", new DialogInterface.OnClickListener() {

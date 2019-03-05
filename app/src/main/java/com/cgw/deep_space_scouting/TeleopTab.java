@@ -18,13 +18,14 @@ public class TeleopTab extends Fragment {
     public static final String[] hab_level_array = {"please select", "the robot did not climb", "1", "2", "3", "not sure"};
     public static final String[] hab_speed_array = {"please select", "the robot did not climb", "1", "2", "3", "not sure"};
 
-    Spinner hab_level_spinner;
-    Spinner hab_speed_spinner;
+    static Spinner hab_level_spinner;
+    static Spinner hab_speed_spinner;
+    private static View view;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.teleop_tab, container, false);
+        view = inflater.inflate(R.layout.teleop_tab, container, false);
 
         sets(view);
         getSpinnerValues(view); // this method call can't be in enterData for some reason

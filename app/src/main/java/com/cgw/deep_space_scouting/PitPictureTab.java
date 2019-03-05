@@ -2,7 +2,6 @@ package com.cgw.deep_space_scouting;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,38 +15,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 
 import java.io.File;
 import java.io.IOException;
 
 public class PitPictureTab extends Fragment {
 
-    ImageView robot_picture;
     String team_number = "";
     String currentPhotoPath;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.pit_picture_tab, container, false);
 
-        robot_picture = view.findViewById(R.id.robot_picture);
         submitPicture(view);
 
         return view;
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        Bitmap bitmap = (Bitmap)data.getExtras().get("data");
-        robot_picture.setImageBitmap(bitmap);
     }
 
     public File createImageFile(View view) throws IOException {
         EditText picture_team_number_box = view.findViewById(R.id.picture_team_number_box);
         team_number = picture_team_number_box.getText().toString();
 
-        String image_file_name = "JPEG_" + team_number + "_";
+        String image_file_name = team_number + "_";
 
         final File path = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
         final File picture_file = File.createTempFile(image_file_name, ".jpg", path);
