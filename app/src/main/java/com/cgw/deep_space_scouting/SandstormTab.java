@@ -87,17 +87,17 @@ public class SandstormTab extends Fragment {
     public void setTeamSpinners(View view){
 
         EditText match_number_box = view.findViewById(R.id.match_number_box);
-        String match_number = String.valueOf(match_number_box.getText());
+        String match_number = String.valueOf(match_number_box.getText().toString());
         team_number_spinner = view.findViewById(R.id.team_number_spinner);
 
         ArrayAdapter team_number_spinner_adapter;
 
         if(match_number.equals("")){
-            team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[101]);
+            team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[93]);
             team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
             team_number_spinner.setAdapter(team_number_spinner_adapter);
         } else if(Integer.valueOf(match_number) > MatchList.num_matches){
-            team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[101]);
+            team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[93]);
             team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
             team_number_spinner.setAdapter(team_number_spinner_adapter);
         }
@@ -124,6 +124,11 @@ public class SandstormTab extends Fragment {
                 team_number_spinner.setAdapter(team_number_spinner_adapter);
                 break;
             case "5":
+                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
+                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
+                team_number_spinner.setAdapter(team_number_spinner_adapter);
+                break;
+            case "6":
                 team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
                 team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
                 team_number_spinner.setAdapter(team_number_spinner_adapter);
@@ -559,41 +564,6 @@ public class SandstormTab extends Fragment {
                 team_number_spinner.setAdapter(team_number_spinner_adapter);
                 break;
             case "93":
-                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
-                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                team_number_spinner.setAdapter(team_number_spinner_adapter);
-                break;
-            case "94":
-                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
-                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                team_number_spinner.setAdapter(team_number_spinner_adapter);
-                break;
-            case "95":
-                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
-                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                team_number_spinner.setAdapter(team_number_spinner_adapter);
-                break;
-            case "96":
-                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
-                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                team_number_spinner.setAdapter(team_number_spinner_adapter);
-                break;
-            case "97":
-                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
-                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                team_number_spinner.setAdapter(team_number_spinner_adapter);
-                break;
-            case "98":
-                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
-                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                team_number_spinner.setAdapter(team_number_spinner_adapter);
-                break;
-            case "99":
-                team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
-                team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
-                team_number_spinner.setAdapter(team_number_spinner_adapter);
-                break;
-            case "100":
                 team_number_spinner_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_spinner_item, MatchList.teamArray[Integer.valueOf(match_number) - 1]);
                 team_number_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); // The drop down view
                 team_number_spinner.setAdapter(team_number_spinner_adapter);
