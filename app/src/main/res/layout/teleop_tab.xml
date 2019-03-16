@@ -20,6 +20,54 @@
         app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_hatch_box" />
 
     <ImageView
+        android:id="@+id/high_hatch_img"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/high_rocket_hatch_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/high_rocket_hatch_plus_btn"
+        app:layout_constraintTop_toTopOf="@+id/high_rocket_hatch_plus_btn" />
+
+    <ImageView
+        android:id="@+id/high_cargo_img"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/high_rocket_cargo_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/high_rocket_cargo_plus_btn"
+        app:layout_constraintTop_toTopOf="@+id/high_rocket_cargo_plus_btn" />
+
+    <ImageView
+        android:id="@+id/mid_hatch_img"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_hatch_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/mid_rocket_hatch_plus_btn"
+        app:layout_constraintTop_toTopOf="@+id/mid_rocket_hatch_plus_btn" />
+
+    <ImageView
+        android:id="@+id/mid_cargo_img"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_cargo_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/mid_rocket_cargo_plus_btn"
+        app:layout_constraintTop_toTopOf="@+id/mid_rocket_cargo_plus_btn" />
+
+    <ImageView
+        android:id="@+id/low_hatch_img"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/low_rocket_hatch_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/low_rocket_hatch_plus_btn"
+        app:layout_constraintTop_toTopOf="@+id/low_rocket_hatch_plus_btn" />
+
+    <ImageView
+        android:id="@+id/low_cargo_img"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/low_rocket_cargo_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/low_rocket_cargo_plus_btn"
+        app:layout_constraintTop_toTopOf="@+id/low_rocket_cargo_plus_btn" />
+
+    <ImageView
         android:id="@+id/cs_cargo_image2"
         android:layout_width="65dp"
         android:layout_height="65dp"

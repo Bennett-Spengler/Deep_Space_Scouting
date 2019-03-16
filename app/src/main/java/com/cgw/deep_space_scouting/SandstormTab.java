@@ -78,7 +78,7 @@ public class SandstormTab extends Fragment {
 
                 if(match_number_int > MatchList.num_matches){
                     team_number_box.setText("match does not exist");
-                } else if (match_number_int > 1 && match_number_int < MatchList.num_matches){
+                } else if (match_number_int >= 1 && match_number_int <= MatchList.num_matches){
                     team_number_box.setText(MatchList.teamArray[Integer.valueOf(match_number_box.getText().toString()) - 1]);
                 } else {
                     team_number_box.setText("no match selected");
