@@ -39,13 +39,14 @@
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="535dp"
+        android:layout_marginTop="552dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="0"
         android:textColor="@color/colorFieldYellow"
         android:textSize="36sp"
         app:layout_constraintEnd_toStartOf="@+id/ss_cargo_plus_btn"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toEndOf="@+id/ss_cargo_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/sandstorm_top_guideline" />
 
@@ -111,8 +112,8 @@
         android:layout_width="125dp"
         android:layout_height="45dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginRight="23dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:background="@color/colorFieldYellow"
         android:ems="10"
         android:hint="match number"
@@ -125,21 +126,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="98dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
         android:text="Set Match"
-        app:layout_constraintEnd_toStartOf="@+id/team_number_spinner"
-        app:layout_constraintTop_toBottomOf="@+id/sandstorm_top_guideline" />
-
-    <Spinner
-        android:id="@+id/team_number_spinner"
-        android:layout_width="130dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@color/colorFieldYellow"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/team_number_box"
         app:layout_constraintTop_toBottomOf="@+id/sandstorm_top_guideline" />
 
     <EditText
@@ -183,7 +173,7 @@
         android:layout_marginTop="300dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="HAB Level"
+        android:text="What HAB level did the robot start from?"
         android:textColor="@color/colorRed"
         android:textSize="18sp"
         app:fontFamily="serif"
@@ -200,14 +190,17 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
         android:text="Team Number"
         android:textColor="@color/colorRed"
         android:textSize="18sp"
         app:fontFamily="serif"
+        app:layout_constraintBottom_toTopOf="@+id/team_number_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.977"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/sandstorm_top_guideline" />
+        app:layout_constraintTop_toTopOf="@+id/sandstorm_top_guideline"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
         android:id="@+id/ss_hatch_minus_btn"
@@ -241,20 +234,21 @@
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="535dp"
+        android:layout_marginTop="552dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="0"
         android:textColor="@color/colorFieldYellow"
         android:textSize="36sp"
         app:layout_constraintEnd_toStartOf="@+id/ss_hatch_plus_btn"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toEndOf="@+id/ss_hatch_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/sandstorm_top_guideline" />
 
     <TextView
         android:id="@+id/ss_hatch_box"
-        android:layout_width="262dp"
-        android:layout_height="22dp"
+        android:layout_width="281dp"
+        android:layout_height="27dp"
         android:layout_marginStart="48dp"
         android:layout_marginLeft="48dp"
         android:layout_marginBottom="36dp"
@@ -264,5 +258,44 @@
         app:fontFamily="serif"
         app:layout_constraintBottom_toTopOf="@+id/ss_hatch_minus_btn"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/team_number_box"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:background="@color/colorFieldYellow"
+        android:textColor="@color/colorBlack"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/robot_move_textview" />
+
+    <ImageView
+        android:id="@+id/cs_hatch_image"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/ss_hatch_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/ss_hatch_minus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/ss_hatch_box" />
+
+    <ImageView
+        android:id="@+id/cs_cargo_image"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/ss_cargo_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/ss_cargo_minus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/ss_cargo_box" />
 
 </android.support.constraint.ConstraintLayout>

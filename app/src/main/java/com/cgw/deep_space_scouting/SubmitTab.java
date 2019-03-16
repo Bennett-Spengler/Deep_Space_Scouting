@@ -23,11 +23,8 @@ import java.io.PrintWriter;
 
 public class SubmitTab extends Fragment {
 
-    public static final String[] overall_speed_array = {"please select", "1", "2", "3"};
-    public static final String[] general_strategy_array = {"please select", "rocket and hatches", "rocket and cargo", "cargoship and hatches", "cargoship and cargo", "defense"};
-    public static final String[] penalties_array = {"please select", "yellow card", "red card", "not sure"};
+    public static final String[] general_strategy_array = {"please select", "rocket and hatches", "rocket and cargo", "cargoship and hatches", "cargoship and cargo", "defense", "robot did not move"};
 
-    Spinner overall_speed_spinner;
     Spinner general_strategy_spinner;
     Spinner sandstorm_hab_spinner;
 
@@ -36,7 +33,7 @@ public class SubmitTab extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.submit_tab, container, false);
 
-        sets(view);
+        sets();
         getSpinnerValues(view);
         submitBtn(view);
         deleteFile(view);
@@ -45,20 +42,7 @@ public class SubmitTab extends Fragment {
     }
 
     public void getSpinnerValues(View view) {
-        overall_speed_spinner = view.findViewById(R.id.overall_speed_spinner);
         general_strategy_spinner = view.findViewById(R.id.general_strategy_spinner);
-
-        overall_speed_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.overall_speed = overall_speed_spinner.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         general_strategy_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -141,15 +125,7 @@ public class SubmitTab extends Fragment {
         MainActivity.comments = String.valueOf(comments_box.getText().toString());
     }
 
-    public void sets(View view) {
-
-        overall_speed_spinner = view.findViewById(R.id.overall_speed_spinner);
-        general_strategy_spinner = view.findViewById(R.id.general_strategy_spinner);
-
-        ArrayAdapter<CharSequence> overall_speed_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, overall_speed_array);
-        overall_speed_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        overall_speed_spinner.setAdapter(overall_speed_spinner_adapter);
-
+    public void sets() {
         ArrayAdapter<CharSequence> general_strategy_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, general_strategy_array);
         general_strategy_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         general_strategy_spinner.setAdapter(general_strategy_spinner_adapter);
@@ -157,7 +133,6 @@ public class SubmitTab extends Fragment {
 
     public void reset(View view) {
 
-        overall_speed_spinner.setSelection(0);
         general_strategy_spinner.setSelection(0);
 
         EditText final_score_box = view.findViewById(R.id.final_score_box);

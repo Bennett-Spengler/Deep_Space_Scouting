@@ -36,26 +36,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/overall_speed_spinner"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@color/colorFieldYellow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Spinner
         android:id="@+id/general_strategy_spinner"
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@color/colorFieldYellow"
@@ -64,30 +50,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="364dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="170dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:gravity="center_horizontal"
-        android:text="Rate the robot's overall speed on the field (1 is slow, 3 is fast)"
-        android:textColor="@color/colorRed"
-        android:textSize="18sp"
-        app:fontFamily="serif"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline2" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="103dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="What was the robot's general strategy?"
@@ -96,15 +64,15 @@
         app:fontFamily="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/overall_speed_spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/teleop_title_view2" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
-        android:layout_marginStart="128dp"
-        android:layout_marginLeft="128dp"
-        android:layout_marginTop="515dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginLeft="136dp"
+        android:layout_marginTop="328dp"
         android:text="Final Score"
         android:textColor="@color/colorRed"
         android:textSize="18sp"
@@ -116,9 +84,9 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="27dp"
-        android:layout_marginTop="515dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
+        android:layout_marginTop="328dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginRight="80dp"
         android:text="Did the robot ever break down?"
         android:textColor="@color/colorRed"
         android:textSize="18sp"
@@ -134,23 +102,22 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
         android:text="What other comments do you have on the robot's performance?"
         android:textColor="@color/colorRed"
         android:textSize="18sp"
         app:fontFamily="serif"
         app:layout_constraintBottom_toTopOf="@+id/comments_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/final_score_box"
         android:layout_width="122dp"
         android:layout_height="36dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginLeft="116dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginLeft="124dp"
+        android:layout_marginTop="12dp"
         android:background="@color/colorFieldYellow"
         android:ems="10"
         android:inputType="number"
@@ -161,9 +128,9 @@
         android:id="@+id/break_down_checkbox"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="180dp"
-        android:layout_marginRight="180dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
         android:background="@color/colorFieldYellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -176,13 +143,12 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="280dp"
         android:background="@color/colorFieldYellow"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
