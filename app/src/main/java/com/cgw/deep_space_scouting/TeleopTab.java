@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 
 public class TeleopTab extends Fragment {
 
@@ -30,6 +30,10 @@ public class TeleopTab extends Fragment {
 
     private static ImageView cs_hatch_image;
     private static ImageView cs_cargo_image;
+    private static ImageView cargoship_image;
+//    private static ImageView rocket_image;
+
+    private static CheckBox penalties_checkbox;
 
     private static View view;
 
@@ -40,7 +44,7 @@ public class TeleopTab extends Fragment {
 
         sets(view);
         getSpinnerValues(view);
-        enterData();
+        enterData(view);
 
         return view;
     }
@@ -51,7 +55,11 @@ public class TeleopTab extends Fragment {
         hab_level_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.hab_climb_level = hab_level_spinner.getSelectedItem().toString();
+                if(hab_level_spinner.getSelectedItem().toString().equals("the robot did not climb") || hab_level_spinner.getSelectedItem().toString().equals("not sure")){
+                    MainActivity.hab_climb_level = "0";
+                } else {
+                    MainActivity.hab_climb_level = hab_level_spinner.getSelectedItem().toString();
+                }
             }
 
             @Override
@@ -61,7 +69,13 @@ public class TeleopTab extends Fragment {
         });
     }
 
-    public void enterData(){
+    public void enterData(View view){
+        penalties_checkbox = view.findViewById(R.id.penalties_checkbox);
+        if(penalties_checkbox.isChecked()){
+            MainActivity.penalties = "1";
+        } else {
+            MainActivity.penalties = "0";
+        }
     }
 
     public void sets(View view){
@@ -70,11 +84,13 @@ public class TeleopTab extends Fragment {
         cs_hatch_image.setImageResource(R.drawable.hatch_panel);
         cs_cargo_image = view.findViewById(R.id.cs_cargo_image2);
         cs_cargo_image.setImageResource(R.drawable.cargo_ball);
+//        rocket_image = view.findViewById(R.id.rocket_image);
+//        rocket_image.setImageResource(R.drawable.red_rocket); //might need to change this line if I decide to add a blue rocket
 
         hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
         ArrayAdapter<CharSequence> hab_level_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, hab_level_array);
         hab_level_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        hab_level_spinner.setAdapter(hab_level_spinner_adapter);
+        hab_level_spinner.setAdapter(hab_level_spinner_adapter); //maybe try putting these functions in the setMatch button thing instead of running it during every create...
 
         cargoship_hatch_count_box = view.findViewById(R.id.cargoship_hatch_count_box);
         cargoship_hatch_count_box.setText(MainActivity.cargoship_hatch_count);

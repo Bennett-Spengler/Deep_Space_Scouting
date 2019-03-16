@@ -81,6 +81,10 @@ public class MatchList extends AppCompatActivity {
                             "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
                             "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0",
                             "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0"};
+        } else if (tablet_number == 7){
+            teamArray = new String[]
+                    {};
+
         } else {
             teamArray = null;
         }

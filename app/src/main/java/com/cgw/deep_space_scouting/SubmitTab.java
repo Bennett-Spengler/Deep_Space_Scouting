@@ -33,7 +33,7 @@ public class SubmitTab extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.submit_tab, container, false);
 
-        sets();
+        sets(view);
         getSpinnerValues(view);
         submitBtn(view);
         deleteFile(view);
@@ -125,7 +125,8 @@ public class SubmitTab extends Fragment {
         MainActivity.comments = String.valueOf(comments_box.getText().toString());
     }
 
-    public void sets() {
+    public void sets(View view) {
+        general_strategy_spinner = view.findViewById(R.id.general_strategy_spinner);
         ArrayAdapter<CharSequence> general_strategy_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, general_strategy_array);
         general_strategy_spinner_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         general_strategy_spinner.setAdapter(general_strategy_spinner_adapter);

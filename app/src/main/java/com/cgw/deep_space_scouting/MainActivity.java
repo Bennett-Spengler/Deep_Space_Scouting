@@ -48,10 +48,11 @@ public class MainActivity extends AppCompatActivity {
     public static String general_strategy = "";
     public static String final_score = "";
     public static String breakdown = "0"; //this will be a "0" for no breakdown and a "1" for a breakdown
+    public static String penalties = "0";
     public static String comments = "";
 
     //ARRAY OF ALL VARIABLES LISTED ABOVE
-    public static String[] all_data_array = new String[19];
+    public static String[] all_data_array = new String[20];
 
     private SectionsPageAdapter mSectionsPageAdapter;
     public static ViewPager mViewPager;
@@ -260,7 +261,8 @@ public class MainActivity extends AppCompatActivity {
         all_data_array[14] = general_strategy;
         all_data_array[15] = final_score;
         all_data_array[16] = breakdown;
-        all_data_array[17] = comments;
-        all_data_array[18] = scout_name;
+        all_data_array[17] = penalties;
+        all_data_array[18] = comments;
+        all_data_array[19] = scout_name;
     }
 }
