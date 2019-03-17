@@ -7,78 +7,133 @@
     android:background="@color/colorGrey">
 
     <ImageView
+        android:id="@+id/cargoship_image"
+        android:layout_width="301dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/rocket_image"
+        android:layout_width="520dp"
+        android:layout_height="930dp"
+        android:layout_marginStart="370dp"
+        android:layout_marginLeft="370dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/cs_hatch_image2"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleop_cargoship_hatch_plus_btn"
         app:layout_constraintEnd_toStartOf="@+id/teleop_cargoship_hatch_plus_btn"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/teleop_cargoship_hatch_minus_btn"
-        app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_hatch_box" />
+        app:layout_constraintTop_toTopOf="@+id/teleop_cargoship_hatch_plus_btn"
+        app:layout_constraintVertical_bias="0.142" />
 
     <ImageView
         android:id="@+id/high_hatch_img"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="@+id/high_rocket_hatch_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/high_rocket_hatch_plus_btn"
-        app:layout_constraintTop_toTopOf="@+id/high_rocket_hatch_plus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/high_rocket_hatch_plus_btn"
+        tools:layout_editor_absoluteX="496dp" />
 
     <ImageView
         android:id="@+id/high_cargo_img"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/high_rocket_cargo_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/high_rocket_cargo_plus_btn"
+        app:layout_constraintEnd_toStartOf="@+id/high_rocket_cargo_plus_btn"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/high_rocket_cargo_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/high_rocket_cargo_plus_btn" />
 
     <ImageView
         android:id="@+id/mid_hatch_img"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_hatch_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/mid_rocket_hatch_plus_btn"
+        app:layout_constraintEnd_toStartOf="@+id/mid_rocket_hatch_plus_btn"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toEndOf="@+id/mid_rocket_hatch_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/mid_rocket_hatch_plus_btn" />
 
     <ImageView
         android:id="@+id/mid_cargo_img"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_cargo_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/mid_rocket_cargo_plus_btn"
-        app:layout_constraintTop_toTopOf="@+id/mid_rocket_cargo_plus_btn" />
+        app:layout_constraintEnd_toStartOf="@+id/mid_rocket_cargo_plus_btn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/mid_rocket_cargo_minus_btn"
+        app:layout_constraintTop_toTopOf="@+id/mid_rocket_cargo_plus_btn"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/low_hatch_img"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/low_rocket_hatch_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/low_rocket_hatch_plus_btn"
+        app:layout_constraintEnd_toStartOf="@+id/low_rocket_hatch_plus_btn"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/low_rocket_hatch_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/low_rocket_hatch_plus_btn" />
 
     <ImageView
         android:id="@+id/low_cargo_img"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/low_rocket_cargo_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/low_rocket_cargo_plus_btn"
+        app:layout_constraintEnd_toStartOf="@+id/low_rocket_cargo_plus_btn"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toEndOf="@+id/low_rocket_cargo_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/low_rocket_cargo_plus_btn" />
 
     <ImageView
         android:id="@+id/cs_cargo_image2"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleop_cargoship_hatch_plus_btn2"
         app:layout_constraintEnd_toStartOf="@+id/teleop_cargoship_hatch_plus_btn2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/teleop_cargoship_hatch_minus_btn2"
-        app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_cargo_box" />
+        app:layout_constraintTop_toTopOf="@+id/teleop_cargoship_hatch_plus_btn2"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView20"
@@ -99,14 +154,15 @@
         android:id="@+id/low_rocket_cargo_plus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:onClick="lowRocketCargoPlusBtn"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/low_rocket_cargo_count_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/low_rocket_cargo_count_box" />
+        app:layout_constraintTop_toTopOf="@+id/low_rocket_cargo_count_box"
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/low_rocket_cargo_count_box"
@@ -121,9 +177,10 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/low_rocket_cargo_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/high_rocket_cargo_plus_btn"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toEndOf="@+id/high_rocket_cargo_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/low_rocket_cargo_minus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/low_rocket_cargo_minus_btn"
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/low_rocket_hatch_count_box"
@@ -139,72 +196,75 @@
         app:layout_constraintBottom_toBottomOf="@+id/low_rocket_hatch_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/high_rocket_hatch_plus_btn"
         app:layout_constraintStart_toEndOf="@+id/low_rocket_hatch_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/low_rocket_hatch_minus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/low_rocket_hatch_minus_btn"
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/low_rocket_hatch_minus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="636dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:onClick="lowRocketHatchMinusBtn"
         android:text="-"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/high_rocket_hatch_plus_btn"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintEnd_toStartOf="@+id/low_rocket_hatch_plus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/mid_rocket_cargo_minus_btn" />
 
     <Button
         android:id="@+id/low_rocket_cargo_minus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="748dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:onClick="lowRocketCargoMinusBtn"
         android:text="-"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/high_rocket_cargo_plus_btn"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintEnd_toStartOf="@+id/low_rocket_cargo_plus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/low_rocket_hatch_minus_btn" />
 
     <Button
         android:id="@+id/low_rocket_hatch_plus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:onClick="lowRocketHatchPlusBtn"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/low_rocket_hatch_count_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/low_rocket_hatch_count_box" />
+        app:layout_constraintTop_toTopOf="@+id/low_rocket_hatch_count_box"
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/mid_rocket_hatch_minus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="388dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:onClick="midRocketHatchMinusBtn"
         android:text="-"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/high_rocket_hatch_plus_btn"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintEnd_toStartOf="@+id/mid_rocket_hatch_plus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/high_rocket_cargo_minus_btn" />
 
     <Button
         android:id="@+id/mid_rocket_hatch_plus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:onClick="midRocketHatchPlusBtn"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_hatch_count_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mid_rocket_hatch_count_box" />
+        app:layout_constraintTop_toTopOf="@+id/mid_rocket_hatch_count_box"
+        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/mid_rocket_hatch_count_box"
@@ -219,35 +279,37 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_hatch_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/high_rocket_hatch_plus_btn"
-        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toEndOf="@+id/high_rocket_hatch_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/mid_rocket_hatch_minus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/mid_rocket_hatch_minus_btn"
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/mid_rocket_cargo_plus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:onClick="midRocketCargoPlusBtn"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_cargo_count_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/mid_rocket_cargo_count_box" />
+        app:layout_constraintTop_toTopOf="@+id/mid_rocket_cargo_count_box"
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/mid_rocket_cargo_minus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:onClick="midRocketCargoMinusBtn"
         android:text="-"
         android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/high_rocket_cargo_plus_btn"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintEnd_toStartOf="@+id/mid_rocket_cargo_plus_btn"
+        app:layout_constraintTop_toBottomOf="@+id/mid_rocket_hatch_minus_btn" />
 
     <TextView
         android:id="@+id/mid_rocket_cargo_count_box"
@@ -262,34 +324,37 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/mid_rocket_cargo_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/high_rocket_cargo_plus_btn"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toEndOf="@+id/mid_rocket_cargo_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/mid_rocket_cargo_minus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/mid_rocket_cargo_minus_btn"
+        app:layout_constraintVertical_bias="0.6" />
 
     <Button
         android:id="@+id/high_rocket_cargo_plus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:onClick="highRocketCargoPlusBtn"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/high_rocket_cargo_count_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/high_rocket_cargo_count_box" />
+        app:layout_constraintTop_toTopOf="@+id/high_rocket_cargo_count_box"
+        app:layout_constraintVertical_bias="0.8" />
 
     <Button
         android:id="@+id/high_rocket_cargo_minus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:onClick="highRocketCargoMinusBtn"
         android:text="-"
         android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/high_rocket_cargo_plus_btn"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toBottomOf="@+id/high_rocket_hatch_minus_btn" />
 
     <TextView
         android:id="@+id/high_rocket_cargo_count_box"
@@ -305,7 +370,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/high_rocket_cargo_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/high_rocket_cargo_plus_btn"
         app:layout_constraintStart_toEndOf="@+id/high_rocket_cargo_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/high_rocket_cargo_minus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/high_rocket_cargo_minus_btn"
+        app:layout_constraintVertical_bias="0.6" />
 
     <TextView
         android:id="@+id/cargoship_cargo_count_box"
@@ -313,69 +379,56 @@
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="352dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="0"
         android:textColor="@color/colorFieldYellow"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleop_cargoship_hatch_minus_btn2"
         app:layout_constraintEnd_toStartOf="@+id/teleop_cargoship_hatch_plus_btn2"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.795"
         app:layout_constraintStart_toEndOf="@+id/teleop_cargoship_hatch_minus_btn2"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/teleop_cargoship_hatch_minus_btn2"
+        app:layout_constraintVertical_bias="0.2" />
 
     <Button
         android:id="@+id/teleop_cargoship_hatch_plus_btn2"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="200dp"
         android:onClick="cargoshipPlusCargoBtn"
         android:text="+"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cargoship_cargo_count_box"
         app:layout_constraintStart_toEndOf="@+id/teleop_cargoship_hatch_minus_btn"
-        app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_hatch_box" />
-
-    <TextView
-        android:id="@+id/teleop_cargoship_cargo_box"
-        android:layout_width="113dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:layout_marginTop="252dp"
-        android:text="Cargo Placed"
-        android:textColor="@color/colorRed"
-        android:textSize="18sp"
-        app:fontFamily="serif"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/cargoship_cargo_count_box"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/teleop_cargoship_hatch_minus_btn2"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="200dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
         android:onClick="cargoshipMinusCargoBtn"
         android:text="-"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_hatch_box" />
+        app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_hatch_minus_btn" />
 
     <Button
         android:id="@+id/teleop_cargoship_hatch_plus_btn"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
         android:layout_marginLeft="76dp"
-        android:layout_marginTop="36dp"
         android:onClick="cargoshipPlusHatchBtn"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/teleop_cargoship_hatch_minus_btn"
-        app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_hatch_box" />
+        tools:layout_editor_absoluteY="294dp" />
 
     <TextView
         android:id="@+id/cargoship_hatch_count_box"
@@ -383,42 +436,29 @@
         android:layout_height="51dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="184dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="0"
         android:textColor="@color/colorFieldYellow"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleop_cargoship_hatch_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/teleop_cargoship_hatch_plus_btn"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toEndOf="@+id/teleop_cargoship_hatch_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
-
-    <TextView
-        android:id="@+id/teleop_cargoship_hatch_box"
-        android:layout_width="135dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
-        android:layout_marginTop="84dp"
-        android:text="Hatches Placed"
-        android:textColor="@color/colorRed"
-        android:textSize="18sp"
-        app:fontFamily="serif"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/teleop_cargoship_hatch_minus_btn"
+        app:layout_constraintVertical_bias="0.7" />
 
     <Button
         android:id="@+id/teleop_cargoship_hatch_minus_btn"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:onClick="cargoshipMinusHatchBtn"
         android:text="-"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teleop_cargoship_hatch_box" />
+        tools:layout_editor_absoluteY="294dp" />
 
     <TextView
         android:id="@+id/teleop_title_view"
@@ -428,16 +468,14 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="25dp"
         android:text="TELEOP"
         android:textAllCaps="false"
         android:textColor="@color/colorRed"
         android:textSize="45sp"
         android:textStyle="bold|italic"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toTopOf="@+id/teleop_cargoship_hatch_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline" />
 
@@ -467,14 +505,15 @@
         android:id="@+id/high_rocket_hatch_plus_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="168dp"
-        android:layout_marginRight="168dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
         android:onClick="highRocketHatchPlusBtn"
         android:text="+"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/high_rocket_hatch_count_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/high_rocket_hatch_count_box" />
+        app:layout_constraintTop_toTopOf="@+id/high_rocket_hatch_count_box"
+        app:layout_constraintVertical_bias="0.7" />
 
     <TextView
         android:id="@+id/high_rocket_hatch_count_box"
@@ -489,7 +528,7 @@
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="@+id/high_rocket_hatch_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/high_rocket_hatch_plus_btn"
-        app:layout_constraintHorizontal_bias="0.534"
+        app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toEndOf="@+id/high_rocket_hatch_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/high_rocket_hatch_minus_btn"
         app:layout_constraintVertical_bias="0.6" />
@@ -543,5 +582,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/penalties_checkbox_box"
         app:layout_constraintStart_toEndOf="@+id/penalties_checkbox_box"
         app:layout_constraintTop_toTopOf="@+id/penalties_checkbox_box" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_begin="862dp" />
 
 </android.support.constraint.ConstraintLayout>

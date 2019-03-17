@@ -6,10 +6,28 @@
     android:layout_height="match_parent"
     android:background="@color/colorGrey">
 
+    <ImageView
+        android:id="@+id/cs_hatch_image"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ss_hatch_plus_btn"
+        app:layout_constraintEnd_toStartOf="@+id/ss_hatch_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/ss_hatch_minus_btn"
+        app:layout_constraintTop_toTopOf="@+id/ss_hatch_plus_btn" />
+
+    <ImageView
+        android:id="@+id/cs_cargo_image"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ss_cargo_minus_btn"
+        app:layout_constraintEnd_toStartOf="@+id/ss_cargo_plus_btn"
+        app:layout_constraintStart_toEndOf="@+id/ss_cargo_minus_btn"
+        app:layout_constraintTop_toTopOf="@+id/ss_cargo_minus_btn" />
+
     <Button
         android:id="@+id/ss_cargo_minus_btn"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="520dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
@@ -36,24 +54,19 @@
     <TextView
         android:id="@+id/ss_cargo_count_box"
         android:layout_width="20dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="552dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_height="50dp"
         android:text="0"
         android:textColor="@color/colorFieldYellow"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ss_cargo_plus_btn"
         app:layout_constraintEnd_toStartOf="@+id/ss_cargo_plus_btn"
-        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toEndOf="@+id/ss_cargo_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/sandstorm_top_guideline" />
+        app:layout_constraintTop_toTopOf="@+id/ss_cargo_plus_btn" />
 
     <Button
         android:id="@+id/ss_cargo_plus_btn"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="520dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
@@ -204,8 +217,8 @@
 
     <Button
         android:id="@+id/ss_hatch_minus_btn"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="520dp"
@@ -218,12 +231,13 @@
     <Button
         android:id="@+id/ss_hatch_plus_btn"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="520dp"
         android:onClick="ssPlusHatchBtn"
         android:text="+"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="30sp"
         app:layout_constraintStart_toEndOf="@+id/ss_hatch_minus_btn"
         app:layout_constraintTop_toTopOf="@+id/sandstorm_top_guideline" />
@@ -231,19 +245,14 @@
     <TextView
         android:id="@+id/ss_hatch_count_box"
         android:layout_width="20dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="552dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_height="54dp"
         android:text="0"
         android:textColor="@color/colorFieldYellow"
         android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ss_hatch_minus_btn"
         app:layout_constraintEnd_toStartOf="@+id/ss_hatch_plus_btn"
-        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toEndOf="@+id/ss_hatch_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/sandstorm_top_guideline" />
+        app:layout_constraintTop_toTopOf="@+id/ss_hatch_minus_btn" />
 
     <TextView
         android:id="@+id/ss_hatch_box"
@@ -268,34 +277,8 @@
         android:layout_marginRight="13dp"
         android:background="@color/colorFieldYellow"
         android:textColor="@color/colorBlack"
-        android:textSize="18sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/robot_move_textview" />
-
-    <ImageView
-        android:id="@+id/cs_hatch_image"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/ss_hatch_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/ss_hatch_minus_btn"
-        app:layout_constraintTop_toBottomOf="@+id/ss_hatch_box" />
-
-    <ImageView
-        android:id="@+id/cs_cargo_image"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/ss_cargo_plus_btn"
-        app:layout_constraintStart_toEndOf="@+id/ss_cargo_minus_btn"
-        app:layout_constraintTop_toBottomOf="@+id/ss_cargo_box" />
 
 </android.support.constraint.ConstraintLayout>
