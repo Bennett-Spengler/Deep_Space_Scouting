@@ -20,6 +20,7 @@
         android:id="@+id/textView12"
         android:layout_width="748dp"
         android:layout_height="155dp"
+        android:layout_marginBottom="76dp"
         android:text="    Deep Space Scouting"
         android:textColor="@color/colorRed"
         android:textSize="64sp"
@@ -27,5 +28,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="729dp"
+        android:layout_height="697dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/team_logo" />
 
 </android.support.constraint.ConstraintLayout>

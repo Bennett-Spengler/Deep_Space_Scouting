@@ -18,7 +18,7 @@ public class TeleopTab extends Fragment {
 
     public static final String[] hab_level_array = {"please select", "the robot did not climb", "1", "2", "3", "not sure"};
 
-    private static Spinner hab_level_spinner;
+    public static Spinner hab_level_spinner;
     private static TextView cargoship_hatch_count_box;
     private static TextView cargoship_cargo_count_box;
     private static TextView high_rocket_hatch_count_box;
@@ -27,18 +27,6 @@ public class TeleopTab extends Fragment {
     private static TextView mid_rocket_cargo_count_box;
     private static TextView low_rocket_hatch_count_box;
     private static TextView low_rocket_cargo_count_box;
-
-    private static ImageView rocket_image;
-    private static ImageView cs_hatch_image;
-    private static ImageView cs_cargo_image;
-    private static ImageView high_hatch_img;
-    private static ImageView high_cargo_img;
-    private static ImageView mid_hatch_img;
-    private static ImageView mid_cargo_img;
-    private static ImageView low_hatch_img;
-    private static ImageView low_cargo_img;
-    private static ImageView cargoship_image;
-
 
     public static CheckBox penalties_checkbox;
 
@@ -86,28 +74,6 @@ public class TeleopTab extends Fragment {
     }
 
     public void sets(View view){
-
-        cargoship_image = view.findViewById(R.id.cargoship_image);
-        cargoship_image.setImageResource(R.drawable.cargoship);
-        rocket_image = view.findViewById(R.id.rocket_image);
-        rocket_image.setImageResource(R.drawable.red_rocket);
-
-        cs_hatch_image = view.findViewById(R.id.cs_hatch_image2);
-        cs_hatch_image.setImageResource(R.drawable.hatch_panel);
-        cs_cargo_image = view.findViewById(R.id.cs_cargo_image2);
-        cs_cargo_image.setImageResource(R.drawable.cargo_ball);
-        high_hatch_img = view.findViewById(R.id.high_hatch_img);
-        high_hatch_img.setImageResource(R.drawable.hatch_panel_white_bck);
-        high_cargo_img = view.findViewById(R.id.high_cargo_img);
-        high_cargo_img.setImageResource(R.drawable.cargo_ball_white_bck);
-        mid_hatch_img = view.findViewById(R.id.mid_hatch_img);
-        mid_hatch_img.setImageResource(R.drawable.hatch_panel_white_bck);
-        mid_cargo_img = view.findViewById(R.id.mid_cargo_img);
-        mid_cargo_img.setImageResource(R.drawable.cargo_ball_white_bck);
-        low_hatch_img = view.findViewById(R.id.low_hatch_img);
-        low_hatch_img.setImageResource(R.drawable.hatch_panel_white_bck);
-        low_cargo_img = view.findViewById(R.id.low_cargo_img);
-        low_cargo_img.setImageResource(R.drawable.cargo_ball_white_bck);
 
         hab_level_spinner = view.findViewById(R.id.hab_level_spinner);
         ArrayAdapter<CharSequence> hab_level_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, hab_level_array);

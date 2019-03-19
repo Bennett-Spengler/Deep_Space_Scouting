@@ -162,8 +162,7 @@ public class SubmitTab extends Fragment {
         if(numEmpty > 0) {
             android.support.v7.app.AlertDialog.Builder altDial = new android.support.v7.app.AlertDialog.Builder(getActivity());
             altDial.setMessage("It seems like you haven't filled out all fields... " +
-                    "Please fill out any empty fields OR fields left labeled 'please select'." +
-                    " Make sure you also click 'set match' again if you make any changes!").setCancelable(false);
+                    "Please fill out any empty fields OR fields left labeled 'please select'.").setCancelable(false);
             altDial.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {

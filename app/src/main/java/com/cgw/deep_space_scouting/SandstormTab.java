@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -27,9 +28,6 @@ public class SandstormTab extends Fragment {
     private static TextView ss_hatch_count_box;
     private static TextView ss_cargo_count_box;
     private static View view;
-
-    private static ImageView cs_hatch_image;
-    private static ImageView cs_cargo_image;
 
     @Nullable
     @Override
@@ -71,6 +69,9 @@ public class SandstormTab extends Fragment {
             @Override
             public void onClick(View v) {
 
+                sandstorm_hab_spinner.setSelection(0);
+                TeleopTab.hab_level_spinner.setSelection(0);
+
                 //these lines must be inside an onClick method since onCreateView only runs when window is created.
                 int match_number_int = Integer.valueOf(match_number_box.getText().toString());
                 String match_number_string = String.valueOf(match_number_box.getText().toString());
@@ -93,11 +94,6 @@ public class SandstormTab extends Fragment {
 
     public void sets(final View view){
 
-        cs_hatch_image = view.findViewById(R.id.cs_hatch_image);
-        cs_hatch_image.setImageResource(R.drawable.hatch_panel);
-        cs_cargo_image = view.findViewById(R.id.cs_cargo_image);
-        cs_cargo_image.setImageResource(R.drawable.cargo_ball);
-
         //this sets the HAB spinner
         sandstorm_hab_spinner = view.findViewById(R.id.sandstorm_hab_spinner);
         ArrayAdapter<CharSequence> sandstorm_hab_spinner_adapter = new ArrayAdapter<CharSequence>(this.getActivity(), android.R.layout.simple_spinner_item, ss_hab_array);
@@ -110,11 +106,13 @@ public class SandstormTab extends Fragment {
         match_number_box = view.findViewById(R.id.match_number_box);
         match_number_box.setText(MainActivity.scout_name);
 
+        team_number_box = view.findViewById(R.id.team_number_box);
+        team_number_box.setText(MainActivity.team_number);
+
         ss_hatch_count_box = view.findViewById(R.id.ss_hatch_count_box);
         ss_hatch_count_box.setText(MainActivity.sandstorm_hatch_count);
         ss_cargo_count_box = view.findViewById(R.id.ss_cargo_count_box);
         ss_cargo_count_box.setText(MainActivity.sandstorm_cargo_count);
-
     }
 
     public static void reset(){ //ASK YEH WHY THEY DON'T CHANGE TO THE DEFAULTS!!!! (setSelection(0);)

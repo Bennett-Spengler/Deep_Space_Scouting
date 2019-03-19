@@ -7,22 +7,24 @@
     android:background="@color/colorGrey">
 
     <ImageView
-        android:id="@+id/cs_hatch_image"
+        android:id="@+id/imageView3"
         android:layout_width="75dp"
         android:layout_height="75dp"
         app:layout_constraintBottom_toBottomOf="@+id/ss_hatch_plus_btn"
         app:layout_constraintEnd_toStartOf="@+id/ss_hatch_plus_btn"
         app:layout_constraintStart_toEndOf="@+id/ss_hatch_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/ss_hatch_plus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/ss_hatch_plus_btn"
+        app:srcCompat="@drawable/hatch_panel_no_bkg" />
 
     <ImageView
-        android:id="@+id/cs_cargo_image"
+        android:id="@+id/imageView4"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="@+id/ss_cargo_minus_btn"
+        app:layout_constraintBottom_toBottomOf="@+id/ss_cargo_plus_btn"
         app:layout_constraintEnd_toStartOf="@+id/ss_cargo_plus_btn"
         app:layout_constraintStart_toEndOf="@+id/ss_cargo_minus_btn"
-        app:layout_constraintTop_toTopOf="@+id/ss_cargo_minus_btn" />
+        app:layout_constraintTop_toTopOf="@+id/ss_cargo_plus_btn"
+        app:srcCompat="@drawable/cargo_ball_no_bkg" />
 
     <Button
         android:id="@+id/ss_cargo_minus_btn"
