@@ -283,4 +283,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/robot_move_textview" />
 
+    <EditText
+        android:id="@+id/team_number_box_2"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:background="@color/colorFieldYellow"
+        android:ems="10"
+        android:hint="team number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_number_box" />
+
 </android.support.constraint.ConstraintLayout>

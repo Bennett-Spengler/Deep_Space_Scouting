@@ -7,6 +7,34 @@
     android:layout_height="match_parent"
     android:background="@color/colorGrey">
 
+    <CheckBox
+        android:id="@+id/penalties_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="300dp"
+        android:layout_marginRight="300dp"
+        android:background="@color/colorFieldYellow"
+        app:layout_constraintBottom_toBottomOf="@+id/penalties_checkbox_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/penalties_checkbox_box"
+        app:layout_constraintTop_toTopOf="@+id/penalties_checkbox_box" />
+
+    <TextView
+        android:id="@+id/penalties_checkbox_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="290dp"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="480dp"
+        android:text="Penalties"
+        android:textColor="@color/colorRed"
+        android:textSize="30sp"
+        app:fontFamily="serif"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
     <TextView
         android:id="@+id/teleop_title_view2"
         android:layout_width="169dp"
@@ -143,7 +171,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="180dp"
         android:background="@color/colorFieldYellow"
         android:ems="10"
         android:inputType="textPersonName"

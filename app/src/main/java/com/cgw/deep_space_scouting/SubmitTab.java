@@ -134,7 +134,7 @@ public class SubmitTab extends Fragment {
 
     public void reset(View view) {
 
-        TeleopTab.penalties_checkbox.setChecked(false);
+        //penalties_checkbox.setChecked(false);
         general_strategy_spinner.setSelection(0);
 
         EditText final_score_box = view.findViewById(R.id.final_score_box);

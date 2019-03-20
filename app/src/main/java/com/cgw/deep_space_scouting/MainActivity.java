@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new SandstormTab(), "          Sandstorm          ");
         adapter.addFragment(new TeleopTab(), "          Teleop          ");
         adapter.addFragment(new SubmitTab(), "          Other");
-        adapter.addFragment(new PitPictureTab(), "Pit Scouting");
+        adapter.addFragment(new PitScoutingTab(), "Pit Scouting");
 
         viewPager.setAdapter(adapter);
     }

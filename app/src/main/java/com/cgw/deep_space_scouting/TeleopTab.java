@@ -28,8 +28,6 @@ public class TeleopTab extends Fragment {
     private static TextView low_rocket_hatch_count_box;
     private static TextView low_rocket_cargo_count_box;
 
-    public static CheckBox penalties_checkbox;
-
     private static View view;
 
     @Nullable
@@ -65,12 +63,6 @@ public class TeleopTab extends Fragment {
     }
 
     public void enterData(View view){
-        penalties_checkbox = view.findViewById(R.id.penalties_checkbox);
-        if(penalties_checkbox.isChecked()){
-            MainActivity.penalties = "1";
-        } else {
-            MainActivity.penalties = "0";
-        }
     }
 
     public void sets(View view){

@@ -10,9 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -24,10 +22,12 @@ public class SandstormTab extends Fragment {
     private static EditText match_number_box;
     private static Button set_match_btn;
     private static Spinner sandstorm_hab_spinner;
-    private static TextView team_number_box;
+//    private static TextView team_number_box;
     private static TextView ss_hatch_count_box;
     private static TextView ss_cargo_count_box;
     private static View view;
+
+    private static EditText team_number_box2;
 
     @Nullable
     @Override
@@ -48,7 +48,11 @@ public class SandstormTab extends Fragment {
         sandstorm_hab_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.sandstorm_hab = sandstorm_hab_spinner.getSelectedItem().toString();
+                if(sandstorm_hab_spinner.getSelectedItem().toString().equals("the robot did not move") || sandstorm_hab_spinner.getSelectedItem().toString().equals("not sure")){
+                    MainActivity.sandstorm_hab = "0";
+                } else {
+                    MainActivity.sandstorm_hab = sandstorm_hab_spinner.getSelectedItem().toString();
+                }
             }
 
             @Override
@@ -62,7 +66,8 @@ public class SandstormTab extends Fragment {
 
         scout_name_box = view.findViewById(R.id.scout_name_box);
         match_number_box = view.findViewById(R.id.match_number_box);
-        team_number_box = view.findViewById(R.id.team_number_box);
+//        team_number_box = view.findViewById(R.id.team_number_box);
+        team_number_box2 = view.findViewById(R.id.team_number_box_2);
 
         set_match_btn = view.findViewById(R.id.set_match_btn);
         set_match_btn.setOnClickListener(new View.OnClickListener() {
@@ -73,21 +78,20 @@ public class SandstormTab extends Fragment {
                 TeleopTab.hab_level_spinner.setSelection(0);
 
                 //these lines must be inside an onClick method since onCreateView only runs when window is created.
-                int match_number_int = Integer.valueOf(match_number_box.getText().toString());
-                String match_number_string = String.valueOf(match_number_box.getText().toString());
+                int match_number = Integer.valueOf(match_number_box.getText().toString());
 
-
-                if(match_number_int > MatchList.num_matches){
-                    team_number_box.setText("match does not exist");
-                } else if (match_number_int >= 1 && match_number_int <= MatchList.num_matches){
-                    team_number_box.setText(MatchList.teamArray[Integer.valueOf(match_number_box.getText().toString()) - 1]);
-                } else {
-                    team_number_box.setText("no match selected");
-                }
+//                if(match_number > MatchList.num_matches){
+//                    team_number_box.setText("N/A");
+//                } else if (match_number >= 1 && match_number <= MatchList.num_matches){
+//                    team_number_box.setText(MatchList.teamArray[Integer.valueOf(match_number_box.getText().toString()) - 1]);
+//                } else {
+//                    team_number_box.setText("no match selected");
+//                }
 
                 MainActivity.scout_name = String.valueOf(scout_name_box.getText().toString());
                 MainActivity.match_number = String.valueOf(match_number_box.getText().toString());
-                MainActivity.team_number = String.valueOf(MatchList.teamArray[Integer.valueOf(match_number_box.getText().toString()) - 1]);
+//                MainActivity.team_number = String.valueOf(MatchList.teamArray[Integer.valueOf(match_number_box.getText().toString()) - 1]);
+                MainActivity.team_number = String.valueOf(team_number_box2.getText().toString());
             }
         });
     }
@@ -106,8 +110,10 @@ public class SandstormTab extends Fragment {
         match_number_box = view.findViewById(R.id.match_number_box);
         match_number_box.setText(MainActivity.scout_name);
 
-        team_number_box = view.findViewById(R.id.team_number_box);
-        team_number_box.setText(MainActivity.team_number);
+//        team_number_box = view.findViewById(R.id.team_number_box);
+//        team_number_box.setText(MainActivity.team_number);
+        team_number_box2 = view.findViewById(R.id.team_number_box_2);
+        team_number_box2.setText(MainActivity.team_number);
 
         ss_hatch_count_box = view.findViewById(R.id.ss_hatch_count_box);
         ss_hatch_count_box.setText(MainActivity.sandstorm_hatch_count);
@@ -117,7 +123,8 @@ public class SandstormTab extends Fragment {
 
     public static void reset(){ //ASK YEH WHY THEY DON'T CHANGE TO THE DEFAULTS!!!! (setSelection(0);)
         match_number_box.setText("");
-        team_number_box.setText("");
+//        team_number_box.setText("");
+        team_number_box2.setText("");
         ss_hatch_count_box.setText("");
         ss_cargo_count_box.setText("");
 
